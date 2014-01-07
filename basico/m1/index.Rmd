@@ -6,11 +6,31 @@ job         : Estatístico
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [bootstrap, quiz, shiny, interactive, mathjax]            # {mathjax, quiz, bootstrap}
+widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft, selfcontained}
-ext_widgets : {rCharts: [libraries/nvd3]}
-
+ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
+github      : {user: marcionicolau, repo: courses}
+assets:
+  css: 
+    - "http://fonts.googleapis.com/css?family=Open+Sans"
+    - "http://fonts.googleapis.com/css?family=Oxygen"
 --- &radio
+<style>
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.container { width: 900px; }
+</style>
+
+
 ## Question 1
 
 What is 1 + 1?
@@ -49,7 +69,7 @@ print(M1, tag = 'chart')
 ```
 
 
---- &logo
+---
 ## Interactive 2
 ```{r opts.label = 'shiny'}
 slidifyUI(
@@ -63,6 +83,20 @@ slidifyUI(
     tags$div(id = 'nvd3plot', class='shiny-html-output nvd3 rChart')
   )
 )
+```
+
+---
+## Interactive 3
+```{r echo = FALSE, results = 'asis'}
+require(rCharts)
+r1 <- rPlot(mpg ~ wt | am + vs, 
+  data = mtcars, 
+  color = 'gear',
+  type = 'point'
+)
+r1$addControls("x", "wt", names(mtcars))
+r1$addControls("y", "mpg", names(mtcars))
+r1
 ```
 
 --- &twocols
@@ -98,4 +132,20 @@ This slide has two columns
 - point a
 - point b
 - point c
+
+---
+
+## Another attempt to add rCharts
+
+```{r echo = T}
+haireye = as.data.frame(HairEyeColor)
+n1 <- nPlot(Freq ~ Hair, group = 'Eye', type = 'multiBarChart',
+  data = subset(haireye, Sex == 'Male')
+)
+n1$addParams(width = 500, height = 500)
+n1$addControls("group", "Eye",names(haireye))
+n1$addControls("type", "multiBarChart", c('multiBarChart', 'multiBarHorizontalChart'))
+n1$save("rp2.html", cdn=TRUE)
+```
+<iframe src="rp2.html" width=1200 height=600> </iframe>
 

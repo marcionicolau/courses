@@ -6,11 +6,31 @@ job         : Estatístico
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [bootstrap, quiz, shiny, interactive, mathjax]            # {mathjax, quiz, bootstrap}
+widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft, selfcontained}
-ext_widgets : {rCharts: [libraries/nvd3]}
-
+ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
+github      : {user: marcionicolau, repo: courses}
+assets:
+  css: 
+    - "http://fonts.googleapis.com/css?family=Open+Sans"
+    - "http://fonts.googleapis.com/css?family=Oxygen"
 --- &radio
+<style>
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.container { width: 900px; }
+</style>
+
+
 ## Question 1
 
 What is 1 + 1?
@@ -199,7 +219,7 @@ print(M1, tag = 'chart')</textarea>
 
 
 
---- &logo
+---
 ## Interactive 2
 <div class="row-fluid">
   <div class="span4">
@@ -220,6 +240,11 @@ print(M1, tag = 'chart')</textarea>
     <div class="shiny-html-output nvd3 rChart" id="nvd3plot"></div>
   </div>
 </div>
+
+
+---
+## Interactive 3
+<iframe src=assets/fig/unnamed-chunk-4.html seamless></iframe>
 
 
 --- &twocols
@@ -255,4 +280,21 @@ This slide has two columns
 - point a
 - point b
 - point c
+
+---
+
+## Another attempt to add rCharts
+
+
+```r
+haireye = as.data.frame(HairEyeColor)
+n1 <- nPlot(Freq ~ Hair, group = "Eye", type = "multiBarChart", data = subset(haireye, 
+    Sex == "Male"))
+n1$addParams(width = 500, height = 500)
+n1$addControls("group", "Eye", names(haireye))
+n1$addControls("type", "multiBarChart", c("multiBarChart", "multiBarHorizontalChart"))
+n1$save("rp2.html", cdn = TRUE)
+```
+
+<iframe src="rp2.html" width=1200 height=600> </iframe>
 
