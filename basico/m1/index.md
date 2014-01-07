@@ -222,7 +222,7 @@ print(M1, tag = 'chart')</textarea>
 </div>
 
 
---- &twocols-logo
+--- &twocols
 ### Two Column Layout   
 This slide has two columns
     
@@ -238,7 +238,7 @@ This slide has two columns
 - point 2
 - point 3
 
---- &twocols-logo
+--- &twocols
 
 ### Two Columns
 
