@@ -1,0 +1,13 @@
+base
+DBI
+googleVis
+knitr
+plyr
+rCharts
+RPostgreSQL
+shiny
+slidify
+slidifyLibraries
+stringr
+swirlify
+XML
