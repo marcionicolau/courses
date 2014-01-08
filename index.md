@@ -18,5 +18,6 @@ Lista com o material de treinamentos e cursos por conteúdo.
 
 ### Estatística Básica
 1. [Introdução](http://marcionicolau.github.com/courses/basico/intro)
-2. [Módulo 01](http://marcionicolau.github.com/courses/basico/m1)
+2. [Módulo 00](http://marcionicolau.github.com/courses/basico/m0)
+3. [Módulo 01](http://marcionicolau.github.com/courses/basico/m1)
 

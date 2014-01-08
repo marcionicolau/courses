@@ -1,0 +1,6 @@
+base
+DBI
+knitr
+rCharts
+RPostgreSQL
+slidify
