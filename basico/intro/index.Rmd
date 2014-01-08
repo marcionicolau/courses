@@ -3,10 +3,10 @@ title       : Introdução
 subtitle    : Como aprender com os dados
 author      : Marcio Nicolau
 job         : Estatístico
-framework   : revealjs        # {io2012, html5slides, shower, dzslides, ...}
+framework   : revealjs        # {io2012, html5slides, shower, dzslides, revealjs, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap, quiz, interactive]            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap, quiz]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
 github      : {user: marcionicolau, repo: courses}
@@ -14,70 +14,36 @@ twitter:
   text: "Slidify with impress.js!"
 revealjs:
   theme: sky # c("sky", "beige", "simple", "serif", "night", "default", "solarized", "moon")
-  transition: concave # c("cube", "page", "concave", "zoom", "linear", "fade", "none", "default")
+  transition: zoom # c("cube", "page", "concave", "zoom", "linear", "fade", "none", "default")
   center: "true"
-url: {lib: "."}
-bootstrap:
-  theme: amelia
-assets:
-  css: 
-    - "http://fonts.googleapis.com/css?family=Open+Sans"
-    - "http://fonts.googleapis.com/css?family=Oxygen"
-    - "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-    - "http://fonts.googleapis.com/css?family=Alfa+Slab+One|Raleway:100"
-    - "./assets/css/main.css"
 --- 
 
-<style>
+# Estatística
+## Como aprender com os dados
 
-html, body {	
-	font-family: Raleway, 'Arial Narrow' , sans-serif;
-	font-size: 32px;
-	font-weight: 400;
-	letter-spacing: -0.02em;
-	
-	color: #222;
-}
-
-h1, 
-#reveal h2, 
-#reveal h3, 
-#reveal h4 {
-  margin: 0 0 20px 0;
-	
-	color: #333;
-	
-	font-family: 'Alfa Slab One', sans-serif;
-	line-height: 0.9em;
-	letter-spacing: -0.02em;
-	
-	text-transform: uppercase;
-	text-shadow: 0px 0px 6px rgba(0,0,0,0.2);
-}
-</style>
-
-# Introdução
-### Como aprender com os dados
-
-<small> [Marcio Nicolau](http://www.marcionicolau.mat.br) / Estatístico </small>
+### <small> [Marcio Nicolau](http://www.marcionicolau.mat.br) / Estatístico </small>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-*** =pnotes
-
-Some notes on the first slide
-
 ---
 
-## Heads Up
+## Conhecimento
 
-reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with support for CSS 3D transforms to see it in its full glory.
+Diariamente as pessoas adquirem conhecimento sobre as atividades e ambientes ao seu redor.
+
+### This moment
+
+In this moment, what is important?
+
+#### How we do?
+
+The best way
 
 ---
 
 ## Intergalactic Interconnections
 
-You can link between slides internally, [like this](#/2/3).
+You can link between slides internally, [like this](#/9/1).
 
 ---
 
@@ -137,7 +103,7 @@ $('ul.incremental li').addClass('fragment')
 
 ## Code with slide
 
-```{r eval = T}
+```{r eval = T, iframe=TRUE}
 library(ggplot2)
 qplot(wt, mpg, data = mtcars)
 ```
