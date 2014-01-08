@@ -103,7 +103,7 @@ $('ul.incremental li').addClass('fragment')
 
 ## Code with slide
 
-```{r eval = T, iframe=TRUE}
+```{r eval = TRUE}
 library(ggplot2)
 qplot(wt, mpg, data = mtcars)
 ```
@@ -126,4 +126,23 @@ This is slide 1
 
 <iframe src='http://www.statdistributions.com' width = '960px' height = '600px'></iframe>
 
+---
 
+## d3Network
+
+Some examples
+
+```{r eval = TRUE, results='asis', echo=FALSE}
+library(d3Network)
+# Download JSON data
+library(RCurl)
+URL <- "https://raw.github.com/christophergandrud/d3Network/master/JSONdata/flare.json"
+Flare <- getURL(URL)
+
+# Convert to list format
+Flare <- rjson::fromJSON(Flare)
+
+# Create Graph
+d3Tree(List = Flare, fontsize = 10, diameter = 700, file = "ExampleGraph.html")
+```
+<iframe src=ExampleGraph.html seamless width=100% height=400px></iframe>

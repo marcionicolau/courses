@@ -1,10 +1,13 @@
 base
+bitops
+d3Network
 DBI
 ggplot2
 googleVis
 knitr
 plyr
 rCharts
+RCurl
 RPostgreSQL
 shiny
 slidify
